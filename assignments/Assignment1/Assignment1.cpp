@@ -81,14 +81,14 @@ namespace Assignment1
 			char* text = " salut.   acesta este un test ";
 			char* newText = removeSpaces(text);
 			Assert::IsNotNull(newText);
-			Assert::AreNotEqual(strcmp(newText, "salut.acestaesteuntest"), 0);
+			Assert::AreEqual(strcmp(newText, "salut.acestaesteuntest"), 0);
 		}
 
 		TEST_METHOD(TestRemoveSpacesRightTestMoreSpaces) {
 			char* text = "     salut.   acesta este un test     ";
 			char* newText = removeSpaces(text);
 			Assert::IsNotNull(newText);
-			Assert::AreNotEqual(strcmp(newText, "salut.acestaesteuntest"), 0);
+			Assert::AreEqual(strcmp(newText, "salut.acestaesteuntest"), 0);
 		}
 
 
