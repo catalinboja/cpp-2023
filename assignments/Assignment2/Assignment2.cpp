@@ -177,7 +177,12 @@ namespace Assignment2
 			a1.price = 1111.5;
 			a2.price = 2222.5;
 			a3.price = 3333.4;
+
+			//fix conflict with missing operator =
+			a1.model = a2.model = a3.model = nullptr; 
+			
 			vehicles[0] = a1; vehicles[1] = a2; vehicles[2] = a3;
+
 			double rezultat = computeFleetValue(vehicles, 3);
 			Assert::IsTrue(abs(rezultat - 6667.4) < 0.01, L"computeFleetValue does not compute correctly the value");
 		}
