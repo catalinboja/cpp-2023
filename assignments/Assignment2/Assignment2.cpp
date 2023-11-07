@@ -36,7 +36,7 @@ namespace Assignment2
 			Vehicle a;
 			Assert::IsTrue(a.brand == "Unknown",
 				L"Default ctor does not init properly Vehicle::brand");
-			Assert::IsTrue(strcmp(a.model,"Unknown") == 0,
+			Assert::IsTrue(strcmp(a.model, "Unknown") == 0,
 				L"Default ctor does not init properly Vehicle::model");
 			Assert::IsFalse(a.hasBattery,
 				L"Default ctor does not init properly Vehicle::hasBattery");
@@ -45,6 +45,9 @@ namespace Assignment2
 
 			//test if in Heap
 			delete[] a.model;
+
+			//recreate it, conflict with destructor
+			a.model = new char[10];
 		}
 
 		TEST_METHOD(_03TestParamsCtor)
@@ -63,6 +66,9 @@ namespace Assignment2
 
 			//test if in Heap
 			delete[] a.model;
+
+			//recreate it, conflict with destructor
+			a.model = new char[10];
 		}
 
 		TEST_METHOD(_04TestGetStandardType)
@@ -110,9 +116,9 @@ namespace Assignment2
 			char plates[] = "B101POO";
 			a.setLicensePlatesNumber(plates);
 			char* rezultat = a.getLicensePlatesNumber();
-			
-			Assert::IsTrue(strcmp(rezultat, plates) == 0,L"LicensePlates functions are not ok");
-			Assert::IsFalse(rezultat == plates,L"LicensePlates functions are not ok. Shallow copy");
+
+			Assert::IsTrue(strcmp(rezultat, plates) == 0, L"LicensePlates functions are not ok");
+			Assert::IsFalse(rezultat == plates, L"LicensePlates functions are not ok. Shallow copy");
 		}
 
 		TEST_METHOD(_08TestSetModel)
@@ -148,12 +154,15 @@ namespace Assignment2
 			Assert::IsNotNull(result, L"GetModel NOT ok. Returns null");
 			Assert::IsTrue(strcmp(a.model, result) == 0, L"GetModel does NOT return ok the model attribute value");
 			Assert::IsFalse(a.model == result, L"GetModel NOT ok. Returns address");
+
+			//recreate it, conflict with destructor
+			a.model = new char[10];
 		}
 
 
 		TEST_METHOD(_10TestDestructor)
 		{
-			
+
 			Vehicle* pa = new Vehicle();
 			Vehicle::NO_VEHICLES = 0;
 			delete pa;
