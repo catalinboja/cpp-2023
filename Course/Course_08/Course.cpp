@@ -6,6 +6,7 @@ class Student {
 	const int id;
 	char* name;
 	static int NO_STUDENTS;
+	static int ID_COUNTER;
 	int scolarshipValue;
 	int grades[10];
 	int noGrades;
@@ -14,7 +15,7 @@ class Student {
 
 	}
 public:
-	Student(int id, const char* name) : id(id) {
+	Student(const char* name) : id(++ID_COUNTER) {
 		this->name = new char[strlen(name) + 1];
 		strcpy_s(this->name, strlen(name) + 1, name);
 		Student::NO_STUDENTS += 1;
@@ -140,6 +141,7 @@ Student createJohnDoeStudent() {
 }
 
 int Student::NO_STUDENTS = 0;
+int Student::ID_COUNTER = 0;
 
 //by global method
 ostream& operator<<(ostream& console, Student& s) {
