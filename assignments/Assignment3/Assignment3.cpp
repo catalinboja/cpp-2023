@@ -84,6 +84,7 @@ namespace Assignment3
 
 			//test if in Heap
 			delete[] t.kmPerRide;
+			t.kmPerRide = nullptr;
 		}
 
 		TEST_METHOD(_05TestParamsCtorAndStatic)
