@@ -1,0 +1,5 @@
+
+23
+23.5
+Student name is: John
+Student scholarship value is: 0
