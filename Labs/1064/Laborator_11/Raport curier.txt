@@ -1,0 +1,8 @@
+
+Lista livrari curier 
+Destinatar: Gigel
+Adresa: Calea Dorobanti, nr 15, Bucuresti
+Greutate: 0
+Destinatar: Ana
+Adresa: Calea Dorobanti, nr 15, Bucuresti
+Greutate: 0
