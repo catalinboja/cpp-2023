@@ -1,0 +1,9 @@
+		 Daily delivery report for Bob
+	 Delivery 1
+Delivery from John
+Weight 0
+Address:  Calea Dorobanti, no 15, Bucharest
+	 Delivery 2
+Delivery from Alice
+Weight 0
+Address:  Calea Dorobanti, no 15, Bucharest
